@@ -1,0 +1,577 @@
+/* CSS עיצוב כללי */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+}
+
+/* App תצוגת */
+/* .App {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+} */
+
+/* דף הבית עיצוב */
+/* עיצוב עמוד הבית */
+/* עיצוב עמוד הבית */
+/* עיצוב עמוד הבית */
+.home-page {
+  position: relative; /* חשוב כדי שהוידאו והתוכן יתאימו ביחס אליו */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* למנוע גלילה */
+  height: 100vh; /* גובה של 100% מהמסך */
+  margin: 0; /* לוודא שאין שוליים */
+}
+
+/* עיצוב הוידאו */
+.home-video {
+  position: fixed; /* ווידאו מתוקן על המסך */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* פריסה מלאה של הוידאו */
+  z-index: 0; /* הוידאו מתחת לתוכן */
+}
+
+
+
+/* sidebar עיצוב */
+.sidebar {
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: rgb(194, 161, 161);
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* לנווט קישורים */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgb(248, 248, 248);
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #e0e0e0;
+}
+
+/* תוכן עיצוב ראשי */
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  /* background-color: #000000; */
+}
+
+
+/* Footer עיצוב */
+.footer {
+  background-color: #000000;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+}
+
+/* תסגור h1 */
+h1 {
+  font-size: 24px;
+}
+
+.router-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* עיצוב תמונות מוצרים */
+.product-image {
+  width: 200px; /* קביעת רוחב התמונה */
+  height: auto; /* שמירה על יחסי גובה */
+  margin-bottom: 10px; /* מרווח תחתון בין תמונות המוצרים */
+}
+  .products {
+    padding: 20px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 עמודות בכל שורה */
+    gap: 20px;
+}
+
+.product-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.products {
+  padding: 20px;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* תצוגת עמודות אוטומטית */
+  gap: 20px; /* מרווח בין פריטי המוצרים */
+  justify-content: center; /* יישור מרכזי של הפריטים במרחב */
+}
+
+.product-item {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-code {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.edit-btn {
+  background-color: #2196F3;
+}
+
+.edit-btn:hover {
+  background-color: #0b7dda;
+}
+
+.delete-btn {
+  background-color: #f44336;
+}
+
+.delete-btn:hover {
+  background-color: #da190b;
+}
+
+@media (max-width: 1024px) {
+  .product-list {
+    grid-template-columns: repeat(3, 1fr); /* 3 עמודות בשורה למסכים ברוחב גבוהה */
+  }
+}
+
+@media (max-width: 768px) {
+  .product-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 עמודות בשורה למסכים קטנים יותר */
+  }
+}
+.products-container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* תצוגת עמודות אוטומטית */
+  gap: 20px; /* מרווח בין פריטי המוצרים */
+  justify-items: center; /* יישור מרכזי של הפריטים */
+}
+
+.product-card {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.product-category {
+  font-style: italic;
+  color: #666666;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-weight: bold;
+  color: #2ecc71;
+  margin-bottom: 10px;
+}
+
+.add-to-basket {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-basket:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 עמודות בשורה למסכים קטנים יותר */
+  }
+}
+
+@media (max-width: 480px) {
+  .products-container {
+    grid-template-columns: 1fr; /* עמודה אחת למסכים ממש קטנים */
+  }
+}
+
+/* App.css */
+/* CSS עיצוב כללי */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* App.css */
+
+.App {
+  display: flex;
+  flex-direction: column; /* שינוי לכיוון עמוד אחד */
+  min-height: 100vh;
+  position: relative;
+}
+
+.home-page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex: 1; /* גיוס הגנרל */
+}
+
+.home-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.home-content {
+  position: absolute;
+  top: 50%; /* קודם תחתון 50% */
+  left: 50%;
+  transform: translate(-50%, -50%); /* תיקונים שנדרשו */
+  text-align: center;
+  width: 100%;
+}
+
+
+.login-background {
+  width: 200px;
+  cursor: pointer;
+}
+
+/* CSS עיצוב כללי */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* עיצוב עמוד הבית */
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+ /* .home-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 8px;
+}  */
+
+/* עיצוב סרגל הניווט בצד השמאלי */
+.sidebar {
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #555;
+}
+
+/* עיצוב תוכן העמוד */
+.content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 250px;
+}
+
+.footer {
+  background-color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.router-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* עיצוב דף הכניסה */
+/* עיצוב עמוד הלוגין */
+/* עיצוב עמוד הלוגין */
+.login-backraund1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* לוודא שהגובה הוא 100% מהגובה של המסך */
+  background-image: url('C:\Users\USER\Desktop\‏‏תיקיה חדשה\project\client\public\THANL YOU FOR (1).png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+/* עיצוב הקונטיינר של הפורם */
+.login-container {
+  max-width: 400px;
+  width: 100%; /* וודא שהקונטיינר תופס את רוחב ה-100% בתוך ה-Center */
+  background-color: rgba(255, 255, 255, 0.9); /* שקיפות קלה */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* עיצוב הפורם */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* עיצוב השדות של הפורם */
+.login-form input {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+/* עיצוב הכפתורים */
+.login-form button {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* כפתור כניסה */
+.login-form button.login-button {
+  background-color: #aaff00;
+}
+
+.login-form button.login-button:hover {
+  background-color: #101110;
+}
+
+/* כפתור יציאה */
+.login-form button.exit-button {
+  background-color: #aaff00;
+}
+
+.login-form button.exit-button:hover {
+  background-color: #131212;
+}
+/* תיבת גבול עבור כל האלמנטים */
+* {
+  box-sizing: border-box;
+}
+
+
+/* עיצוב דף ההרשמה */
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('C:\Users\USER\Desktop\‏‏תיקיה חדשה\project\client\public\THANL YOU FOR (1).png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+.register-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.register-container button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  background-color: #aaff00;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-container button:hover {
+  background-color: #000000;
+}
